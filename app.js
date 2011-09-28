@@ -3,7 +3,7 @@ var app = module.exports = express.createServer();
 
 //configure express
 app.configure(function(){
-  app.use(express.static(__dirname + '/public'));
+  app.use(express["static"](__dirname + '/public'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
