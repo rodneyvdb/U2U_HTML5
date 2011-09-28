@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>HTML 5 Detection Techniques</title>
+  <script src="../js/modernizr-2.0.6-development-only.js"></script>
+  <script src="../js/jquery-1.6.2.js"></script>
+  <script >
+
+    function supports_canvas()
+    {
+      return !!document.createElement('canvas').getContext;
+    }
+
+    function show(message)
+    {
+      document.getElementById("output").innerHTML = message;
+    }
+
+    function checkCanvas()
+    {
+      if (Modernizr.canvas)
+      {
+        show("Canvas present");
+      } else
+      {
+        show("No canvas there");
+      }
+    }
+
+    function checkCanvasText()
+    {
+      if (Modernizr.canvastext)
+      {
+        show("Canvas Text API present");
+      } else
+      {
+        show("No canvas Text API here");
+      }
+    }
+
+    function supports_video()
+    {
+      return !!document.createElement('video').canPlayType;
+    }
+
+    function supports_h264_baseline_video()
+    {
+      if (!supports_video()) { return false; }
+      var v = document.createElement("video");
+      return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+    }
+
+    function supports_local_storage()
+    {
+      try
+      {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      } catch (e)
+      {
+        return false;
+      }
+    }
+
+    function check_web_workers()
+    {
+      if (Modernizr.webworkers)
+      {
+        show("Web workers ready!");
+      } else
+      {
+        show("Web workers stuck in traffic");
+      }
+    }
+
+    function check_input_types()
+    {
+      var i = document.createElement("input");
+      i.setAttribute("type", "color");
+      return i.type !== "text";
+    }
+
+    function checkInputTypes()
+    {
+      if (check_input_types())
+        show("Input types available");
+      else
+        show("Old input types ...");
+    }
+    
+  </script>
+</head>
+<body>
+  <p id="output">Click one of the buttons to test</p>
+  <span>
+  <button type="button" onclick="checkCanvas()">Canvas</button>
+  <button type="button" onclick="checkCanvasText()">
+    Canvas Text API</button>
+      <button type="button" onclick="check_web_workers()">
+    Web workers</button>
+   <button type="button" onclick="checkInputTypes()">
+   Input Types</button>
+   </span>
+   <div>
+   <a href="http://www.html5test.com">Or try this...</a>
+   </div>
+</body>
+</html>
