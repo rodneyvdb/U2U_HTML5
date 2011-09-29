@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Web Sockets and Chat</title>
+  <script src='../js/jquery-1.6.4.js'></script>
+  <script src='../js/sproutcore-2.0.js'></script>
+  <script src="../socket.io/socket.io.js"></script>
+  <script src='../js/chat.js'></script>
+  <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
+  <link href='css/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+    <h1>Chat</h1>
+    <script type="text/x-handlebars">
+      <label>Name:</label>
+      {{view Chat.personView id="person" type="text" placeholder="Enter your name"}}<br>
+      <label>Message:</label>
+      {{view Chat.messageView id="message" type="text" placeholder="Type a message and press <enter>"}}
+      {{#view Chat.locationButton id="locationButton"}}Send Location{{/view}}
+    </script>
+  </header>
+  <content>
+    <div id='messages'>
+      <div id='pending'>
+  
+        <script type="text/x-handlebars">
+          {{#collection contentBinding="Chat.pending" tagName="div"}}
+            <span class="name">{{content}} is typing...</span>
+          {{/collection}}
+        </script>
+  
+      </div>
+
+      <script type="text/x-handlebars">
+        {{#collection contentBinding="Chat.messages" tagName="div"}}
+          <span class="time">[{{content.time}}]</span>
+          <span class="name">{{content.person}}</span>:
+          <span class="text">{{content.message}}</span>
+        {{/collection}}
+      </script>
+
+    </div>
+  </content>
+</body>
+</html>

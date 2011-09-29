@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using the File Storage API's (Chrome only)</title>
+  <script src="../js/jquery-1.6.4.min.js" type="text/javascript"></script>
+  <script src="../js/storage.js" type="text/javascript"></script>
+</head>
+<body>
+  <div>
+    <h1>
+      First check if filesystem is available</h1>
+    <button id='check'>
+      Check File Storage API's</button><div id='checkOutput'>
+      </div>
+  </div>
+  <div>
+    <h1>
+      Now request some local storage</h1>
+    <button id='request'>
+      Request 2 Mb of storage</button>
+    <div id='storage'>
+    </div>
+  </div>
+  <div>
+    <h1>
+      Working with files</h1>
+    <span>
+      <button id='create' class='storage'>
+        Create a file</button>
+      <button id='load' class='storage'>
+        Load</button>
+      <button id='save' class='storage'>
+        Save</button></span>
+    <button id='delete' class='storage'>
+      Delete the file</button>
+    <div id='fileContents' contenteditable>
+      The file's contents; feel free to edit</div>
+  </div>
+  <div>
+    <button id='dir' class='storage'>
+      List root files to console</button>
+  </div>
+</body>
+</html>
