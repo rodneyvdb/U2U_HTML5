@@ -4,7 +4,7 @@ var io = require('socket.io').listen(app);
 
 //configure express
 app.configure(function(){
-  app.use(express.['static'](__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
