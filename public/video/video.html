@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playing Video</title>
+  <style href="/css/video.css" rel="stylesheet" ></style>
+</head>
+<body>
+  <h1>Playing video</h1>
+  <div>
+    <video src="http://u2upeter.blob.core.windows.net/$root/birdy.mp4" autoplay>
+    </video>
+  </div>
+  <div>
+    <video autoplay controls>
+      <source src="http://u2upeter.blob.core.windows.net/$root/birdy.mp4" />
+      <source src="http://u2upeter.blob.core.windows.net/$root/birdy.ogv"
+              type='video/ogg; codecs="theora, vorbis"' />
+      <source src="http://u2upeter.blob.core.windows.net/$root/birdy.webm"
+              type='video/webm; codecs="vp8, vorbis"' />
+      <object width="320" height="240" type="application/x-shockwave-flash" data="flowplayer-3.2.1.swf">
+        <param name="movie" value="flowplayer-3.2.1.swf" />
+        <param name="allowfullscreen" value="true" />
+        <param name="flashvars" value='config={"clip": {"url": "http://u2upeter.blob.core.windows.net/$root/birdy.mp4", "autoPlay":false, "autoBuffering":true}}' />
+        <p>
+          Download video as <a href="http://u2upeter.blob.core.windows.net/$root/birdy.mp4">MP4</a>, <a href="http://u2upeter.blob.core.windows.net/$root/birdy.webm">WebM</a>, or <a href="http://u2upeter.blob.core.windows.net/$root/birdy.ogv">
+            Ogg</a>.</p>
+      </object>
+    </video>
+  </div>
+</body>
+</html>
