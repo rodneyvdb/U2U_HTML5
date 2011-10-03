@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Specifying CSS colors</title>
+  <!-- inline style for better readability -->
+  <style type="text/css">
+    body
+    {
+      padding: 20px;
+      background: #C0C0C0;
+    }
+    div
+    {
+      margin: 20px;
+      padding: 10px;
+    }
+    #hex
+    {
+      background: #0000FF;
+      color: #FFFF00;
+    }
+    #rgb
+    {
+      background: rgb(0,0,255);
+      color: rgb(100%,100%,0%);
+    }
+    #named
+    {
+      background: Blue;
+      color: Yellow;
+    }
+    #rgba
+    {
+      background: rgba(0,0,255,0.4);
+      color: Yellow;
+    }
+    #hsl
+    {
+      background: hsl(240, 100%, 50%);
+      color: hsl(60, 100%, 50%);
+    }
+    #opacity
+    {
+      background: rgb(0,0,255);
+      color: rgb(100%,100%,0%);
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div id="hex">
+    #hex { background: #0000FF; color: #FFFF00; }
+  </div>
+  <div id="rgb">
+    #rgb { background: rgb(0,0,255); color: rgb(100%,100%,0%); }
+  </div>
+  <div id="named">
+    #named { background: Blue; color: Yellow; }
+  </div>
+  <div id="rgba">
+    #rgba { background: rgba(0,0,255,0.4); color: Yellow; }
+  </div>
+  <div id="hsl">
+    #hsl { background: hsl(240, 100%, 50%); color: hsl(60, 100%, 50%); }
+  </div>
+  <div id="opacity">
+    #rgb { background: rgb(0,0,255); color: rgb(100%,100%,0%); opacity: 0.5; }
+  </div>
+</body>
+</html>

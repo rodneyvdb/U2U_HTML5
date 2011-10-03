@@ -1,0 +1,70 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <title>Using multiple columns</title>
+  <style>
+    .wrapper .content {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      -webkit-column-gap: 10px;
+      -moz-column-gap: 10px;
+      column-gap: 10px;
+      -webkit-column-width: 10em;
+      -moz-column-width: 10em;
+      column-width: 10em;
+      -webkit-column-rule: 1px solid #CCCCCC;
+      -moz-column-rule: 1px solid #CCCCCC;
+      column-rule: 1px solid #CCCCCC;
+    }
+    
+    /*
+    .wrapper .content h2
+    {
+      -webkit-column-break-before: always;
+      -webkit-column-break-after: avoid;
+    }
+    */
+    
+    /*
+    .first.column {
+      background: Yellow;
+    }
+    */
+  </style>
+  <script src="/js/jquery-1.4.1.min.js"></script>
+  <script src="/js/autocolumn.js"></script>
+  <script src="/js/modernizr-2.0.6-development-only.js"></script>
+  <script>
+    $(function ()
+    {
+      if (!Modernizr.csscolumns)
+      {
+        $('.content').columnize({ columns: 3 });
+      }
+    }
+  );
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <h2>Singleton pattern</h2>
+      <p>
+        Singleton is a pattern that controls the context in which an object gets created,
+        in such a way that there can be at most one single instance of the class.
+      </p>
+      <h2>How to implement</h2>
+      <p>
+        For some objects you want to make sure there is only one instance, for example a
+        class that decides on primary keys used for inserting new rows into a database.
+        One way to ensure that no two objects can be created, is to simply not allow creation
+        of objects, i.e. to use a static class (module in VB), with static (shared in VB)
+        fields and methods only. However, static classes cannot implement interfaces or
+        inherit from base classes. As a result, you don’t have polymorphism with static
+        classes. Also, you cannot use data binding against static properties, and many other
+        restrictions apply.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body {
+}
+
+section > h1 {
+  color: #0000FF;
+  font-size: xx-large;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+}
+
+/*section > h1:hover {
+  color: #FF00FF;
+  font-size: xx-large;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+}*/
+
+section > h1:hover {
+  color: #FF00FF;
+  font-size: xx-large;
+  -webkit-transition: color 2s ease-out;
+  -moz-transition: color 2s ease-out;
+  -o-transition: color 2s ease-out;
+  transition: color 2s ease-out;
+}
