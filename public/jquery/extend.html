@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using $.extend</title>
+  <script src='/js/jquery-1.6.4.js'></script>
+
+</head>
+<body>
+
+  <div></div>
+
+  <script>
+  
+  $(function() {
+  
+    var foo = function(args) {
+      
+      args = $.extend({ a : 0, b : "Si", c : "Bonjour", d : 6 }
+                     , args);
+                     
+      return "" + args.a + args.b + args.c + args.d;                     
+      
+    }
+    
+    $('div').html(foo( { a : 1, c : "Hello" } ));
+  });
+  
+  
+  </script>
+</body>

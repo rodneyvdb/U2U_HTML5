@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <title>Where am I?</title>
+  <script src='http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js'> </script>
+  <script >
+    function show_location()
+    {
+      var output = document.getElementById("output");
+      if( !Modernizr.geolocation )
+      {
+        output.innerHTML="Sorry, you're lost!";        
+      }
+      else
+      {
+        navigator.geolocation.getCurrentPosition(
+        function (location)
+        {
+          output.innerHTML = "Latitude = " + location.coords.latitude 
+                         + ", Longitude = " + location.coords.longitude;
+        },
+        function (error)
+        {
+          output.innerHTML = "Sorry, not allowed!"; ;
+        }, null);
+      }
+    }
+    window.onload=show_location;
+  </script>
+</head>
+<body>
+  <h1>
+    Where am I?</h1>
+  <div id="output">
+  </div>
+</body>
+</html>

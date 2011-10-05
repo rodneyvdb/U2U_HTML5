@@ -1,10 +1,12 @@
 body {
   background-color: #C0C0C0;
 }
+
 section
 {
   float: left;
 }
+
 section p + a {
   display: block;
   text-decoration: none;

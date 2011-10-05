@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Where am I (on a map)?</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+  <script src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+  <script>
+    function where_am_I() {
+      navigator.geolocation.getCurrentPosition(show_map);
+    }
+
+    function show_map(location) {
+      var where = new VELatLong(location.coords.latitude, location.coords.longitude);
+      var map = new VEMap("myMap");
+      map.LoadMap(where, 15, VEMapStyle.Birdseye);
+    }
+
+    window.addEventListener("load", where_am_I, false);
+  </script>
+</head>
+<body>
+  <div id='myMap' style="position: relative; width: 600px; height: 400px;">
+  </div>
+</body>
+</html>
