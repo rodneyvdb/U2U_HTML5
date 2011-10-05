@@ -23,7 +23,7 @@
   <div id="logOutput">
   </div>
   <script>
-    var imageURL = "/images/example2.png";
+    var imageURL = "/images/blur.png";
     var image;
     var ctx;
     var workers = [];
@@ -73,8 +73,8 @@
       var chunkStartY = 0;
       var data = ctx.getImageData(chunkStartX, chunkStartY,
                                     chunkWidth, chunkHeight).data;
-
-      worker.postMessage({ 'type': 'blur',
+      worker.postMessage({ 
+        'type': 'blur',
         'imageData': data,
         'width': chunkWidth,
         'height': chunkHeight,
